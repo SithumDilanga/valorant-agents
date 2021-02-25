@@ -206,6 +206,7 @@ class _AgetDetailsScreenState extends State<AgetDetailsScreen> with TickerProvid
 
           return Stack(
           children: [
+            // ------ moving line --------
             PositionedTransition(
               rect: RelativeRectTween(
                 begin: RelativeRect.fromLTRB(0, 0, 0, 0),
@@ -231,6 +232,8 @@ class _AgetDetailsScreenState extends State<AgetDetailsScreen> with TickerProvid
                 ),
               ),
             ),
+            // ------ End moving line --------
+
             // ------- Agent name slide,fade animation text -------
             Positioned(
               top: 200,
@@ -337,7 +340,7 @@ class _AgetDetailsScreenState extends State<AgetDetailsScreen> with TickerProvid
                     child: Hero(
                       tag: 'hero-${widget.agent.uuid}-image',
                       child: 
-                      CachedNetworkImage(
+                      CachedNetworkImage(                // main image
                         imageUrl: widget.agent.fullPortrait,
                         placeholder: (context, url) {
                           return Padding(
@@ -346,7 +349,7 @@ class _AgetDetailsScreenState extends State<AgetDetailsScreen> with TickerProvid
                           );
                         } 
                       ),
-                      // Image.network(         // main image
+                      // Image.network(         
                       //   widget.agent.fullPortrait,
                       // ),
                     ),
@@ -499,7 +502,7 @@ class _AgetDetailsScreenState extends State<AgetDetailsScreen> with TickerProvid
                   children: [
                     AbilityButton(
                       displayIcon: widget.agent.abilities[0].displayIcon,
-                      color: _abilityCardNum == 0 ? Colors.red : null,
+                      color: _abilityCardNum == 0 ? Colors.red[400] : null,
                       onTap: () {
                         setState(() {
                           _abilityCardNum = 0;
@@ -509,7 +512,7 @@ class _AgetDetailsScreenState extends State<AgetDetailsScreen> with TickerProvid
                     ),
                     AbilityButton(
                       displayIcon: widget.agent.abilities[1].displayIcon,
-                      color: _abilityCardNum == 1 ? Colors.red : null,
+                      color: _abilityCardNum == 1 ? Colors.red[400] : null,
                       onTap: () {
                         setState(() {
                           _abilityCardNum = 1;
@@ -519,7 +522,7 @@ class _AgetDetailsScreenState extends State<AgetDetailsScreen> with TickerProvid
                     ),
                     AbilityButton(
                       displayIcon: widget.agent.abilities[2].displayIcon,
-                      color: _abilityCardNum == 2 ? Colors.red : null,
+                      color: _abilityCardNum == 2 ? Colors.red[400] : null,
                       onTap: () {
                         setState(() {
                           _abilityCardNum = 2;
@@ -529,7 +532,7 @@ class _AgetDetailsScreenState extends State<AgetDetailsScreen> with TickerProvid
                     ),
                     AbilityButton(
                       displayIcon: widget.agent.abilities[3].displayIcon,
-                      color: _abilityCardNum == 3 ? Colors.red : null,
+                      color: _abilityCardNum == 3 ? Colors.red[400] : null,
                       onTap: () {
                         setState(() {
                           _abilityCardNum = 3;

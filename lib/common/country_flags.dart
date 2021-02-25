@@ -16,6 +16,6 @@ class CountryFlags {
     'kr': 'South Korea'
   };
 
-  List countryFlagCodes = ['se', 'br', 'au', 'ma', 'ru', 'ru', 'de', 'us', 'gb', 'us', 'jp', 'cn', 'mx', 'Unknown', 'kr'];
+  List countryFlagCodes = ['se', 'br', 'au', 'ma', 'ru', 'de', 'us', 'gb', 'us', 'jp', 'cn', 'mx', 'Unknown', 'kr'];
 
 }

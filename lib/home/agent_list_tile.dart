@@ -1,3 +1,6 @@
+import 'package:avatar_glow/avatar_glow.dart';
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:valorant_agents/models/agent.dart';
 import 'package:valorant_agents/pages/agent_details.dart';
@@ -28,11 +31,23 @@ class AgentListTile extends StatelessWidget {
               child: agent.displayIcon.isEmpty ? null : 
                 Hero(
                   tag: 'hero-${agent.uuid}-image',
-                  child: Image.network(
-                    agent.displayIcon,
-                    fit: BoxFit.cover,
-                    height: 110,
-                  ),
+                  child: AvatarGlow(
+                    shape: BoxShape.rectangle,
+                    endRadius: 55,
+                    glowColor: Colors.white,
+                    duration: Duration(seconds: 5),
+                    child: CachedNetworkImage(
+                      imageUrl: agent.displayIcon,
+                      fit: BoxFit.cover,
+                      height: 110,
+                      placeholder: (context, url) => CupertinoActivityIndicator(),
+                    ),
+                  ), 
+                  // Image.network(
+                  //   agent.displayIcon,
+                  //   fit: BoxFit.cover,
+                  //   height: 110,
+                  // ),
                 ),         
             ),
           ),
